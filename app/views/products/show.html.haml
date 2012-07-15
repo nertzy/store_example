@@ -1,0 +1,8 @@
+= link_to "Back to all products", products_path
+
+%h1= @product.name
+
+-if @product.photo_url?
+  = image_tag @product.photo_url
+
+= simple_format @product.description
