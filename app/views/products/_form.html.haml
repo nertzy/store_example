@@ -5,7 +5,7 @@
       .controls
         = f.text_field :name
     .control-group
-      = f.label :photo_url, class: "control-label"
+      = f.label :photo_url, Product.human_attribute_name(:photo_url), class: "control-label"
       .controls
         = f.text_field :photo_url
     .control-group
