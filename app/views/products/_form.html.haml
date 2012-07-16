@@ -1,16 +1,6 @@
-= form_for product, html: {class: 'well form-horizontal'} do |f|
-  %fieldset
-    .control-group
-      = f.label :name, class: "control-label"
-      .controls
-        = f.text_field :name
-    .control-group
-      = f.label :photo_url, Product.human_attribute_name(:photo_url), class: "control-label"
-      .controls
-        = f.text_field :photo_url
-    .control-group
-      = f.label :description, class: "control-label"
-      .controls
-        = f.text_area :description, rows: 8
-    .form-actions
-      %button.btn Save
+= simple_form_for product, html: {class: 'well form-horizontal'} do |f|
+  = f.input :name
+  = f.input :photo_url
+  = f.input :description, input_html: {rows: 8}
+  .form-actions
+    = f.button :submit
