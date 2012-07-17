@@ -1,5 +1,5 @@
 - unless @search.missing_query?
-  %h1 Search results for #{params[:query]}
+  %h1 Search results for #{@search.query}
 
 %p= pluralize @search.count, "result"
 
