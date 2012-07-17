@@ -1,8 +1,8 @@
-- if params[:query].present?
+- unless @search.missing_query?
   %h1 Search results for #{params[:query]}
 
-%p= pluralize @products.size, "result"
+%p= pluralize @search.count, "result"
 
 %ul.products
-  - @products.each do |product|
-    %li= render product
+  - @search.results.each do |result|
+    %li= render result
