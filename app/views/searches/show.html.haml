@@ -1,0 +1,9 @@
+= render "form"
+
+%h1 Search results for #{params[:query]}
+
+%p= pluralize @products.size, "result"
+
+%ul.products
+  - @products.each do |product|
+    %li= render product

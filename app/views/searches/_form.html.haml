@@ -1,0 +1,3 @@
+%form.form-search.well{action: search_path, method: :get}
+  = text_field_tag :query, params[:query], class: "search-query"
+  = button_tag "Search", class: "btn"
