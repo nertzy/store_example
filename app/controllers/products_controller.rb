@@ -8,11 +8,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create(params[:product])
+    @product = Product.new(params[:product])
 
-    if @product.valid?
+    if @product.save
+      flash.notice = "Thanks, your new product has been saved!"
       redirect_to @product
     else
+      flash.now.alert = "Sorry, unable to save your product, see errors below."
       render :new
     end
   end
