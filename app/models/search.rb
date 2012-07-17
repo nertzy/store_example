@@ -1,8 +1,15 @@
 class Search
+  extend ActiveModel::Naming
+  include ActiveModel::Conversion
+
   attr_reader :query
 
-  def initialize(params)
+  def initialize(params = {})
     @query = params[:query]
+  end
+
+  def persisted?
+    false
   end
 
   def results
