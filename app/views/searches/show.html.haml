@@ -1,4 +1,5 @@
-%h1 Search results for #{params[:query]}
+- if params[:query].present?
+  %h1 Search results for #{params[:query]}
 
 %p= pluralize @products.size, "result"
 

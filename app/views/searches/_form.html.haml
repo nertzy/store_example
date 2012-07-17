@@ -1,3 +1,7 @@
 %form.form-search.well{action: search_path, method: :get}
-  = text_field_tag :query, params[:query], class: "search-query"
-  = button_tag "Search", class: "btn"
+  %fieldset.control-group{class: ("error" if @missing_query)}
+    .controls
+      = text_field_tag :query, params[:query], class: "search-query"
+      = button_tag "Search", class: "btn"
+      - if @missing_query
+        %span.help-inline Please fill out a search query
