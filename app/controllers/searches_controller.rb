@@ -3,6 +3,6 @@ class SearchesController < ApplicationController
   end
 
   def show
-    @search = Search.new(params)
+    @search = Search.new(params[:search]).tap(&:valid?)
   end
 end

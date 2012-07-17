@@ -1,6 +1,9 @@
 class Search
   extend ActiveModel::Naming
   include ActiveModel::Conversion
+  include ActiveModel::Validations
+
+  validates :query, presence: {message: "Please fill out a search query"}
 
   attr_reader :query
 
