@@ -1,4 +1,4 @@
 = simple_form_for @search, url: search_path, method: :get, html: {class: "form-inline well"} do |f|
-  = f.input :query, class: "search-query"
-  .form-actions
-    = f.button :submit, class: "help-inline"
+  = f.input :query, label: false do
+    = f.input_field :query
+    = f.button :submit
